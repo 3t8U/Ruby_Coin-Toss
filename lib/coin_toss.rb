@@ -17,10 +17,11 @@ class CoinToss
 
 
   def coin_conversion()
-    if (@purse / 25 >= 1)
+    if (@purse / 25 < 1)
       @quarters = @purse / 25
       @remainder = (@purse % 25).round()
-      # ()@remainder = 0)
+      @change_arr.push(@quarters)
+  elsif (@remainder = 0)
       @change_arr.push(@quarters)
       # puts @remainder
     end
