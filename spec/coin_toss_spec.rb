@@ -23,7 +23,7 @@ describe("This will test coin_conversion math")do
 # end
 
 it ("full function")do
-coins = CoinToss.new(223)
+coins = CoinToss.new(48)
 expect(coins.coin_conversion()).to(eq([96]))
 end
 end

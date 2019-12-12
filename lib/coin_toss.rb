@@ -23,16 +23,19 @@ class CoinToss
       @change_arr.push(@quarters)
 
     end
-  if (@remainder / 5 >= 1)
-      @nickels = @remainder / 5
-      @change_arr.push(@nickels)
-    end
     if (@remainder / 10 >= 1)
       @dimes = @remainder / 10
+      @remainder = @purse % 10
       @change_arr.push(@dimes)
+    end
+  if (@remainder / 5 >= 1)
+      @nickels = @remainder / 5
+      @remainder = @purse % 5
+      @change_arr.push(@nickels)
     end
   if (@remainder / 1 >= 1)
       @pennies = @remainder / 1
+      @remainder = @purse % 1
       @change_arr.push(@pennies)
     end
     puts @change_arr
