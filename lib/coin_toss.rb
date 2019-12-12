@@ -7,6 +7,7 @@ class CoinToss
     @nickels = 0
     @pennies = 0
     @change_arr = []
+    @remainder = 0
   end
 
   def purse
@@ -16,20 +17,25 @@ class CoinToss
 
 
   def coin_conversion()
-    if (@purse % 25 == 0)
+    if (@purse / 25 >= 1)
       @quarters = @purse / 25
-      # @change_arr.push(@quarters)
-    elsif (@purse % 10 == 0)
-      @dimes = @purse / 10
-      # @change_arr.push(@dimes)
-    elsif (@purse % 5 == 0)
-      @nickels = @purse / 5
-      # @change_arr.push(@nickels)
-    elsif (@purse % 1 == 0)
-      @pennies = @purse / 1
-      # @change_arr.push(@pennies)
+      @remainder = @purse % 25
+      @change_arr.push(@quarters)
+
     end
-    @change_arr.push(coin_conversion)
+  if (@remainder / 5 >= 1)
+      @nickels = @remainder / 5
+      @change_arr.push(@nickels)
+    end
+    if (@remainder / 10 >= 1)
+      @dimes = @remainder / 10
+      @change_arr.push(@dimes)
+    end
+  if (@remainder / 1 >= 1)
+      @pennies = @remainder / 1
+      @change_arr.push(@pennies)
+    end
+    puts @change_arr
   end
 end
 # coins = CoinToss.new()
