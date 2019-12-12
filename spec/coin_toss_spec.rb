@@ -7,7 +7,7 @@ describe("This will test coin_conversion math")do
 
 # it ("test quarter divison")do
 # coins = CoinToss.new(200)
-# expect(coins.coin_conversion()).to(eq([8]))
+# expect(coins.coin_conversion()).to(eq([9]))
 # end
 # it ("test dimes divison")do
 # coins = CoinToss.new(240)
@@ -23,8 +23,8 @@ describe("This will test coin_conversion math")do
 # end
 
 it ("full function")do
-coins = CoinToss.new(48)
-expect(coins.coin_conversion()).to(eq([96]))
+coins = CoinToss.new(47)
+expect(coins.coin_conversion()).to(eq([1,2,2]))
 end
 end
 
